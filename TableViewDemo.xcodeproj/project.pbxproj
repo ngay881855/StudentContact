@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF29FA18251E372000BAAC53 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29FA17251E372000BAAC53 /* StudentInfo.swift */; };
+		FF29FA1B251E4DB200BAAC53 /* StudentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29FA1A251E4DB200BAAC53 /* StudentDataSource.swift */; };
+		FF2D2FBB25155B9A00708615 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2D2FBA25155B9A00708615 /* Student.swift */; };
+		FF31FAB525145A9200BCCE72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FAB425145A9200BCCE72 /* AppDelegate.swift */; };
+		FF31FAB725145A9200BCCE72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */; };
+		FF31FABC25145A9200BCCE72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF31FABA25145A9200BCCE72 /* Main.storyboard */; };
+		FF31FABE25145A9900BCCE72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF31FABD25145A9900BCCE72 /* Assets.xcassets */; };
+		FF31FAC125145A9900BCCE72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF31FABF25145A9900BCCE72 /* LaunchScreen.storyboard */; };
+		FF31FACB25145B4A00BCCE72 /* ListStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FACA25145B4A00BCCE72 /* ListStudentsViewController.swift */; };
+		FF31FAD525146CB300BCCE72 /* ListStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF31FAD425146CB300BCCE72 /* ListStudentTableViewCell.swift */; };
+		FF39911A25171A5200725ABF /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39911925171A5200725ABF /* StudentDetailViewController.swift */; };
+		FF39912225171F1300725ABF /* StudentDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912125171F1300725ABF /* StudentDetailsTableViewCell.swift */; };
+		FF39912A25172DB900725ABF /* AddEditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912925172DB900725ABF /* AddEditStudentViewController.swift */; };
+		FF39912E2517359200725ABF /* AddEditStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */; };
+		FF399132251743B100725ABF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF399131251743B100725ABF /* Validation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF29FA17251E372000BAAC53 /* StudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
+		FF29FA1A251E4DB200BAAC53 /* StudentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDataSource.swift; sourceTree = "<group>"; };
+		FF2D2FBA25155B9A00708615 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		FF31FAB125145A9200BCCE72 /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF31FAB425145A9200BCCE72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF31FABB25145A9200BCCE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF31FABD25145A9900BCCE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF31FAC025145A9900BCCE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF31FAC225145A9900BCCE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF31FACA25145B4A00BCCE72 /* ListStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentsViewController.swift; sourceTree = "<group>"; };
+		FF31FAD425146CB300BCCE72 /* ListStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentTableViewCell.swift; sourceTree = "<group>"; };
+		FF39911925171A5200725ABF /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		FF39912125171F1300725ABF /* StudentDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		FF39912925172DB900725ABF /* AddEditStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentViewController.swift; sourceTree = "<group>"; };
+		FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentTableViewCell.swift; sourceTree = "<group>"; };
+		FF399131251743B100725ABF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF31FAAE25145A9200BCCE72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF2D2FB525155B3500708615 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FF39912525172D7500725ABF /* Add Edit Student */,
+				FF39911525171A1800725ABF /* Student Details */,
+				FF2D2FB625155B3E00708615 /* Student List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FF2D2FB625155B3E00708615 /* Student List */ = {
+			isa = PBXGroup;
+			children = (
+				FF2D2FB725155B4E00708615 /* Model */,
+				FF2D2FB825155B5700708615 /* View */,
+				FF2D2FB925155B5B00708615 /* Controller */,
+			);
+			path = "Student List";
+			sourceTree = "<group>";
+		};
+		FF2D2FB725155B4E00708615 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF2D2FBA25155B9A00708615 /* Student.swift */,
+				FF29FA1A251E4DB200BAAC53 /* StudentDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF2D2FB825155B5700708615 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FAD425146CB300BCCE72 /* ListStudentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF2D2FB925155B5B00708615 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FACA25145B4A00BCCE72 /* ListStudentsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FF31FAA825145A9200BCCE72 = {
+			isa = PBXGroup;
+			children = (
+				FF31FAB325145A9200BCCE72 /* TableViewDemo */,
+				FF31FAB225145A9200BCCE72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF31FAB225145A9200BCCE72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FAB125145A9200BCCE72 /* TableViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF31FAB325145A9200BCCE72 /* TableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FF3991302517439E00725ABF /* Validation */,
+				FF2D2FB525155B3500708615 /* Screens */,
+				FF31FAB425145A9200BCCE72 /* AppDelegate.swift */,
+				FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */,
+				FF31FABA25145A9200BCCE72 /* Main.storyboard */,
+				FF31FABD25145A9900BCCE72 /* Assets.xcassets */,
+				FF31FABF25145A9900BCCE72 /* LaunchScreen.storyboard */,
+				FF31FAC225145A9900BCCE72 /* Info.plist */,
+			);
+			path = TableViewDemo;
+			sourceTree = "<group>";
+		};
+		FF39911525171A1800725ABF /* Student Details */ = {
+			isa = PBXGroup;
+			children = (
+				FF39911825171A3600725ABF /* Model */,
+				FF39911725171A2F00725ABF /* View */,
+				FF39911625171A2600725ABF /* Controller */,
+			);
+			path = "Student Details";
+			sourceTree = "<group>";
+		};
+		FF39911625171A2600725ABF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF39911925171A5200725ABF /* StudentDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FF39911725171A2F00725ABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF39912125171F1300725ABF /* StudentDetailsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF39911825171A3600725ABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF39912525172D7500725ABF /* Add Edit Student */ = {
+			isa = PBXGroup;
+			children = (
+				FF39912825172D9300725ABF /* Model */,
+				FF39912725172D9000725ABF /* View */,
+				FF39912625172D8800725ABF /* Controller */,
+			);
+			path = "Add Edit Student";
+			sourceTree = "<group>";
+		};
+		FF39912625172D8800725ABF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF39912925172DB900725ABF /* AddEditStudentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FF39912725172D9000725ABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF39912825172D9300725ABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF29FA17251E372000BAAC53 /* StudentInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF3991302517439E00725ABF /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				FF399131251743B100725ABF /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF31FAB025145A9200BCCE72 /* TableViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF31FAC525145A9900BCCE72 /* Build configuration list for PBXNativeTarget "TableViewDemo" */;
+			buildPhases = (
+				FF31FAAD25145A9200BCCE72 /* Sources */,
+				FF31FAAE25145A9200BCCE72 /* Frameworks */,
+				FF31FAAF25145A9200BCCE72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TableViewDemo;
+			productName = Q20;
+			productReference = FF31FAB125145A9200BCCE72 /* TableViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF31FAA925145A9200BCCE72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					FF31FAB025145A9200BCCE72 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = FF31FAAC25145A9200BCCE72 /* Build configuration list for PBXProject "TableViewDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF31FAA825145A9200BCCE72;
+			productRefGroup = FF31FAB225145A9200BCCE72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF31FAB025145A9200BCCE72 /* TableViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF31FAAF25145A9200BCCE72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF31FAC125145A9900BCCE72 /* LaunchScreen.storyboard in Resources */,
+				FF31FABE25145A9900BCCE72 /* Assets.xcassets in Resources */,
+				FF31FABC25145A9200BCCE72 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF31FAAD25145A9200BCCE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF39912225171F1300725ABF /* StudentDetailsTableViewCell.swift in Sources */,
+				FF29FA1B251E4DB200BAAC53 /* StudentDataSource.swift in Sources */,
+				FF39912A25172DB900725ABF /* AddEditStudentViewController.swift in Sources */,
+				FF39912E2517359200725ABF /* AddEditStudentTableViewCell.swift in Sources */,
+				FF31FAB525145A9200BCCE72 /* AppDelegate.swift in Sources */,
+				FF29FA18251E372000BAAC53 /* StudentInfo.swift in Sources */,
+				FF39911A25171A5200725ABF /* StudentDetailViewController.swift in Sources */,
+				FF31FAB725145A9200BCCE72 /* SceneDelegate.swift in Sources */,
+				FF2D2FBB25155B9A00708615 /* Student.swift in Sources */,
+				FF31FAD525146CB300BCCE72 /* ListStudentTableViewCell.swift in Sources */,
+				FF399132251743B100725ABF /* Validation.swift in Sources */,
+				FF31FACB25145B4A00BCCE72 /* ListStudentsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF31FABA25145A9200BCCE72 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF31FABB25145A9200BCCE72 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF31FABF25145A9900BCCE72 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF31FAC025145A9900BCCE72 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF31FAC325145A9900BCCE72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF31FAC425145A9900BCCE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF31FAC625145A9900BCCE72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFM24X5V87;
+				INFOPLIST_FILE = TableViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ngayvong.Q20;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF31FAC725145A9900BCCE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFM24X5V87;
+				INFOPLIST_FILE = TableViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ngayvong.Q20;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF31FAAC25145A9200BCCE72 /* Build configuration list for PBXProject "TableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF31FAC325145A9900BCCE72 /* Debug */,
+				FF31FAC425145A9900BCCE72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF31FAC525145A9900BCCE72 /* Build configuration list for PBXNativeTarget "TableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF31FAC625145A9900BCCE72 /* Debug */,
+				FF31FAC725145A9900BCCE72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF31FAA925145A9200BCCE72 /* Project object */;
+}
