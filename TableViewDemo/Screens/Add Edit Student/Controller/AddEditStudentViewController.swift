@@ -119,6 +119,9 @@ class AddEditStudentViewController: UIViewController {
         actionSheet.addAction(actionCamera)
         actionSheet.addAction(actionPhotoLibrary)
         actionSheet.addAction(actionCancel)
+        // On iPad, action sheets must be presented from a popover.
+        actionSheet.popoverPresentationController?.barButtonItem =
+            self.myNavigationBar.topItem?.leftBarButtonItem
         self.present(actionSheet, animated: true, completion: nil)
     }
 }
