@@ -1,6 +1,6 @@
 //
 //  AddEditStudentViewController.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/20/20.
 //
@@ -76,8 +76,8 @@ class AddEditStudentViewController: UIViewController {
         
         studentTemp.profileImage = profileButton.currentImage ?? #imageLiteral(resourceName: "defaultProfile")
         
-        var message: String = ""
-        var title: String = ""
+        var message = String()
+        var title = String()
         if !studentTemp.firstName.validateName() {
             title = "Invalid first name"
             message = "First name can only contain alphabet characters and numbers, and has to be between 3 and 25 characters"
@@ -91,7 +91,7 @@ class AddEditStudentViewController: UIViewController {
             title = "Invalid email"
             message = "Please make sure email is in correct format (ex: david@gmail.com), and the length must not greater than 50 characters"
         }
-        if title != "" && message != "" {
+        if !title.isEmpty && !message.isEmpty {
             let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let actionOK = UIAlertAction(title: "OK", style: .cancel, handler: nil      )
             alert.addAction(actionOK)

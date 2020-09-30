@@ -1,6 +1,6 @@
 //
 //  StudentDetailViewController.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/20/20.
 //
@@ -16,10 +16,10 @@ class StudentDetailViewController: UIViewController {
     
     // MARK: - Properties
     var student: Student = Student()
-    var studentInfos: [StudentInfo] = []
+    private var studentInfos: [StudentInfo] = []
     var studentDelegate: StudentInformationDelegate?
     
-    struct StudentInfo {
+    private struct StudentInfo {
         var key: String
         var value: String
     }

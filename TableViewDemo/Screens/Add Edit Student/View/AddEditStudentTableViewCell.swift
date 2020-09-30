@@ -1,6 +1,6 @@
 //
 //  AddEditStudentTableViewCell.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/20/20.
 //
@@ -19,7 +19,7 @@ class AddEditStudentTableViewCell: UITableViewCell {
     // MARK: - Properties
     var keyType: StudentInfoKey = StudentInfoKey.firstName
     var textFieldDelegate: AddEditStudentTextUpdate?
-    var previousText: String?
+    private var previousText: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,19 +46,19 @@ class AddEditStudentTableViewCell: UITableViewCell {
         if let text = textField?.text, text.count > 0 {
             switch keyLabel.text {
             case StudentInfoKey.firstName.rawValue, StudentInfoKey.lastName.rawValue:
-                if text.count > 25 || !text.isAlphanumeric{
+                if text.count > Constant.maxNameLength || !text.isAlphanumeric{
                     valueTextField.text = previousText
                 } else {
                     previousText = text
                 }
             case StudentInfoKey.phone.rawValue:
-                if text.count > 12 || !text.isPhoneNumberCharacter {
+                if text.count > Constant.maxPhoneNumberLength || !text.isPhoneNumberCharacter {
                     valueTextField.text = previousText
                 } else {
                     previousText = text
                 }
             case StudentInfoKey.email.rawValue:
-                if text.count > 50 {
+                if text.count > Constant.maxEmailLength {
                     valueTextField.text = previousText
                 } else {
                     previousText = text

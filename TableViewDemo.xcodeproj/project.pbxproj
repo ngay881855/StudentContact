@@ -22,6 +22,7 @@
 		FF39912A25172DB900725ABF /* AddEditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912925172DB900725ABF /* AddEditStudentViewController.swift */; };
 		FF39912E2517359200725ABF /* AddEditStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */; };
 		FF399132251743B100725ABF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF399131251743B100725ABF /* Validation.swift */; };
+		FFBFFB5625242AB6004E4E60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBFFB5525242AB6004E4E60 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FF39912925172DB900725ABF /* AddEditStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentViewController.swift; sourceTree = "<group>"; };
 		FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentTableViewCell.swift; sourceTree = "<group>"; };
 		FF399131251743B100725ABF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FFBFFB5525242AB6004E4E60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,14 +121,11 @@
 		FF31FAB325145A9200BCCE72 /* TableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FFBFFB5225242A0A004E4E60 /* Storyboards */,
+				FFBFFB51252429FE004E4E60 /* Support Files */,
 				FF3991302517439E00725ABF /* Validation */,
 				FF2D2FB525155B3500708615 /* Screens */,
-				FF31FAB425145A9200BCCE72 /* AppDelegate.swift */,
-				FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */,
-				FF31FABA25145A9200BCCE72 /* Main.storyboard */,
 				FF31FABD25145A9900BCCE72 /* Assets.xcassets */,
-				FF31FABF25145A9900BCCE72 /* LaunchScreen.storyboard */,
-				FF31FAC225145A9900BCCE72 /* Info.plist */,
 			);
 			path = TableViewDemo;
 			sourceTree = "<group>";
@@ -206,6 +205,26 @@
 			path = Validation;
 			sourceTree = "<group>";
 		};
+		FFBFFB51252429FE004E4E60 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FAB425145A9200BCCE72 /* AppDelegate.swift */,
+				FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */,
+				FF31FAC225145A9900BCCE72 /* Info.plist */,
+				FFBFFB5525242AB6004E4E60 /* Constants.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		FFBFFB5225242A0A004E4E60 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF31FABA25145A9200BCCE72 /* Main.storyboard */,
+				FF31FABF25145A9900BCCE72 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,6 +302,7 @@
 				FF31FAB525145A9200BCCE72 /* AppDelegate.swift in Sources */,
 				FF29FA18251E372000BAAC53 /* StudentInfo.swift in Sources */,
 				FF39911A25171A5200725ABF /* StudentDetailViewController.swift in Sources */,
+				FFBFFB5625242AB6004E4E60 /* Constants.swift in Sources */,
 				FF31FAB725145A9200BCCE72 /* SceneDelegate.swift in Sources */,
 				FF2D2FBB25155B9A00708615 /* Student.swift in Sources */,
 				FF31FAD525146CB300BCCE72 /* ListStudentTableViewCell.swift in Sources */,
@@ -436,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFM24X5V87;
-				INFOPLIST_FILE = TableViewDemo/Info.plist;
+				INFOPLIST_FILE = "TableViewDemo/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFM24X5V87;
-				INFOPLIST_FILE = TableViewDemo/Info.plist;
+				INFOPLIST_FILE = "TableViewDemo/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

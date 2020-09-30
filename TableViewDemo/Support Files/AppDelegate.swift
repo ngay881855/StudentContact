@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/17/20.
 //

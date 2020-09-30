@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  Q20
+//  StudentDataSource.swift
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/25/20.
 //

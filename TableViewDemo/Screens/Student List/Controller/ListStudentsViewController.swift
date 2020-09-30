@@ -1,6 +1,6 @@
 //
-//  FirstViewController.swift
-//  Q20
+//  ListStudentsViewController.swift
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/17/20.
 //
@@ -9,9 +9,9 @@ import UIKit
 
 class GradientView: UIView {
     override open class var layerClass: AnyClass {
-       return CAGradientLayer.classForCoder()
+        return CAGradientLayer.classForCoder()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let gradientLayer = layer as! CAGradientLayer
@@ -22,7 +22,7 @@ class GradientView: UIView {
 class ListStudentsViewController: UITableViewController {
     
     // MARK: Properties
-    var studentDataSource = StudentDataSource(section: [], dataSource: [:]) {
+    private var studentDataSource = StudentDataSource(section: [], dataSource: [:]) {
         didSet {
             if studentDataSource.section.count == 0 {
                 showAlertEmptyStudentList()
@@ -30,7 +30,7 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
-    var previousIndexPath: IndexPath?
+    private var previousIndexPath: IndexPath?
     
     // MARK: VIEW LIFE CYCLES
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ListStudentsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         self.title = "Students"
         
-        loadData()
+        loadDefaultData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +54,7 @@ class ListStudentsViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         studentDataSource.section.count
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SB = UIStoryboard(name: "Main", bundle: nil)
         let studentDetailVC = SB.instantiateViewController(identifier: "studentDetails") as StudentDetailViewController
@@ -101,7 +102,7 @@ class ListStudentsViewController: UITableViewController {
         self.present(addStudentVC, animated: true, completion: nil)
     }
     
-    func loadData() {
+    private func loadDefaultData() {
         var student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "David", lastName: "Wang", phoneNumber: "6788881155", email: "davewang123@gmail.com", isFavorite: false)
         addStudent(at: nil, student: student)
         student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "Angel", lastName: "Panama", phoneNumber: "303030322", email: "AngelPanama@gmail.com", isFavorite: false)
@@ -112,7 +113,7 @@ class ListStudentsViewController: UITableViewController {
         addStudent(at: nil, student: student)
     }
     
-    func addStudent(at index: Int?, student: Student) {
+    private func addStudent(at index: Int?, student: Student) {
         var char = String(student.firstName.first ?? Character(""))
         if char.isNumeric {
             char = "#"
@@ -129,7 +130,7 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
-    func showAlertEmptyStudentList() {
+    private func showAlertEmptyStudentList() {
         let alertController = UIAlertController(title: "No student in your list", message: "Would you like to add a new student?", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Add", style: .default) { (action) in
             self.addStudent(self)

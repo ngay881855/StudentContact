@@ -1,6 +1,6 @@
 //
 //  StudentDetailsTableViewCell.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/20/20.
 //
@@ -23,5 +23,4 @@ class StudentDetailsTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
 }

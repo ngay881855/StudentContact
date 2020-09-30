@@ -1,6 +1,6 @@
 //
-//  ContactTableViewCell.swift
-//  Q20
+//  ListStudentTableViewCell.swift
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/18/20.
 //
@@ -11,16 +11,9 @@ class ListStudentTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var contactImageView: UIImageView! {
-        didSet {
-            contactImageView.frame.size = CGSize(width: 100, height: 100)
-        }
-    }
+    @IBOutlet weak var contactImageView: UIImageView!
     
     @IBOutlet weak var favorButton: UIButton!
-    
-    // MARK: - Properties
-    var imageWidth: CGFloat = CGFloat()
     
     // MARK: - View Life Cycles
     override func awakeFromNib() {

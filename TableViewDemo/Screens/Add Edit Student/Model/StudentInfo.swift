@@ -1,6 +1,6 @@
 //
 //  StudentInfo.swift
-//  Q20
+//  TableViewDemo
 //
 //  Created by Ngay Vong on 9/25/20.
 //
