@@ -164,5 +164,146 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5E30825-04A5-4197-9CE7-ADCAD82E98B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableViewDemo/Screens/Add Edit Student/View/AddEditStudentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "textFieldDidBeginEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "623460A5-CA54-4254-875B-8A6325123F47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableViewDemo/Screens/Add Edit Student/View/AddEditStudentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "textFieldDidChangeSelection(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "623460A5-CA54-4254-875B-8A6325123F47 - 8bc6d32f57e8bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.AddEditStudentTableViewCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ngayvong/Google%20Drive/Winter-2018/iOS%20Training%20Batch/Github/StudentList_TableViewDemo/TableViewDemo/Screens/Add%20Edit%20Student/View/AddEditStudentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "623460A5-CA54-4254-875B-8A6325123F47 - 8bc6d32f57e8bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.AddEditStudentTableViewCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ngayvong/Google%20Drive/Winter-2018/iOS%20Training%20Batch/Github/StudentList_TableViewDemo/TableViewDemo/Screens/Add%20Edit%20Student/View/AddEditStudentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "797">
+               </Location>
+               <Location
+                  uuid = "623460A5-CA54-4254-875B-8A6325123F47 - 8bc6d32f57e8bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.AddEditStudentTableViewCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ngayvong/Google%20Drive/Winter-2018/iOS%20Training%20Batch/Github/StudentList_TableViewDemo/TableViewDemo/Screens/Add%20Edit%20Student/View/AddEditStudentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "974">
+               </Location>
+               <Location
+                  uuid = "623460A5-CA54-4254-875B-8A6325123F47 - 8bc6d32f57e8bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.AddEditStudentTableViewCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ngayvong/Google%20Drive/Winter-2018/iOS%20Training%20Batch/Github/StudentList_TableViewDemo/TableViewDemo/Screens/Add%20Edit%20Student/View/AddEditStudentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1736">
+               </Location>
+               <Location
+                  uuid = "623460A5-CA54-4254-875B-8A6325123F47 - 8bc6d32f57e8bc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TableViewDemo.AddEditStudentTableViewCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "TableViewDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ngayvong/Google%20Drive/Winter-2018/iOS%20Training%20Batch/Github/StudentList_TableViewDemo/TableViewDemo/Screens/Add%20Edit%20Student/View/AddEditStudentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "2504">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76A32B83-EB84-45A4-80E9-F8D09E8DD39D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableViewDemo/Screens/Add Edit Student/View/AddEditStudentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "textFieldDidChangeSelection(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EAD9DAE-1DB4-44DA-AD57-D76D8A628FC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TableViewDemo/Screens/Add Edit Student/View/AddEditStudentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "textFieldDidChangeSelection(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

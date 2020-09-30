@@ -65,8 +65,12 @@ class AddEditStudentViewController: UIViewController {
         
         profileButton.setImage(student.profileImage, for: .normal)
     }
-    
+
     // MARK: - Actions
+    @IBAction func tapGestureActivated(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     @IBAction func cancelBarButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

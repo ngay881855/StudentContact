@@ -99,7 +99,7 @@ class StudentDetailViewController: UIViewController {
     @IBAction func callAction(_ sender: Any) {
         if let phoneURL = NSURL(string: ("tel://" + student.phoneNumber)) {
             let alert = UIAlertController(title: ("Calling " + student.phoneNumber), message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Would you like to call the number?", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
                 UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
             }))
             

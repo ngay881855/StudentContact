@@ -15,7 +15,7 @@ class GradientView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let gradientLayer = layer as! CAGradientLayer
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.green.cgColor]
     }
 }
 
@@ -103,13 +103,13 @@ class ListStudentsViewController: UITableViewController {
     }
     
     private func loadDefaultData() {
-        var student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "David", lastName: "Wang", phoneNumber: "6788881155", email: "davewang123@gmail.com", isFavorite: false)
+        var student = Student(profileImage: #imageLiteral(resourceName: "p4"), firstName: "David", lastName: "Wang", phoneNumber: "6788881155", email: "davewang123@gmail.com", isFavorite: false)
         addStudent(at: nil, student: student)
-        student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "Angel", lastName: "Panama", phoneNumber: "303030322", email: "AngelPanama@gmail.com", isFavorite: false)
+        student = Student(profileImage: #imageLiteral(resourceName: "p1"), firstName: "Angel", lastName: "Panama", phoneNumber: "4049291133", email: "angelPanama@gmail.com", isFavorite: false)
         addStudent(at: nil, student: student)
-        student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "Tommy", lastName: "Hillier", phoneNumber: "6788332718", email: "TommyHillier23@gmail.com", isFavorite: true)
+        student = Student(profileImage: #imageLiteral(resourceName: "p5"), firstName: "Tommy", lastName: "Hillier", phoneNumber: "6788332718", email: "tommyHillier23@gmail.com", isFavorite: true)
         addStudent(at: nil, student: student)
-        student = Student(profileImage: #imageLiteral(resourceName: "defaultProfile"), firstName: "Anthony", lastName: "Tran", phoneNumber: "6773832838", email: "AnthonyTran123@gmail.com", isFavorite: false)
+        student = Student(profileImage: #imageLiteral(resourceName: "p3"), firstName: "Anthony", lastName: "Tran", phoneNumber: "6773832838", email: "anthonytran123@gmail.com", isFavorite: false)
         addStudent(at: nil, student: student)
     }
     
