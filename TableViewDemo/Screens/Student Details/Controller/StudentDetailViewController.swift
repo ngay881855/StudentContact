@@ -50,7 +50,7 @@ class StudentDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         profileButton.layer.masksToBounds = true
-        profileButton.layer.cornerRadius = profileButton.bounds.width/2
+        profileButton.layer.cornerRadius = self.profileButton.bounds.height/2
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = UIColor.gray.cgColor
         profileButton.isUserInteractionEnabled = false
