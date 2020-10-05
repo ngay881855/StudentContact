@@ -4,6 +4,6 @@ A mini project demonstrate using of UITableView, UITableViewCell
 ## Images
 
 <p align="center">
-  <img src="https://github.com/ngay881855/UITableViewDemo/blob/master/GIFs/ezgif-StudentList_1.gif" />
+  <img src="https://github.com/ngay881855/UITableViewDemo/blob/master/GIFs/ezgif-StudentList_1.gif" height="600" />
 </p>
 
