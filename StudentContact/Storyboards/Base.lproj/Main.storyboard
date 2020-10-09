@@ -90,12 +90,15 @@
                         <barButtonItem key="rightBarButtonItem" title="+" image="icons8-plus-math-50" style="done" id="za9-8J-6oy">
                             <connections>
                                 <action selector="addStudent:" destination="yKL-YS-Snt" id="Oh3-Ha-gtP"/>
+                                <segue destination="Ujx-Tk-O8z" kind="popoverPresentation" identifier="AddEditStudentViewController" popoverAnchorBarButtonItem="za9-8J-6oy" id="2bJ-qk-sdP">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hzx-Fm-bt3" id="J5r-OV-GRY"/>
-                        <segue destination="nYy-hn-l75" kind="show" identifier="listStudent" id="zC2-iO-G4J"/>
+                        <segue destination="nYy-hn-l75" kind="show" identifier="StudentDetailViewController" id="zC2-iO-G4J"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdq-7I-6tU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -276,6 +279,9 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="UaV-VN-GQ6">
                             <connections>
                                 <action selector="editStudent:" destination="nYy-hn-l75" id="FPh-cP-wS2"/>
+                                <segue destination="Ujx-Tk-O8z" kind="popoverPresentation" identifier="AddEditStudentViewController" popoverAnchorBarButtonItem="UaV-VN-GQ6" id="Q3E-Mx-tX5">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -287,18 +293,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZK6-Jt-eYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630.43478260869574" y="30.803571428571427"/>
+            <point key="canvasLocation" x="620" y="387"/>
         </scene>
         <!--Add Edit Student View Controller-->
         <scene sceneID="yZh-vC-Cvu">
             <objects>
                 <viewController storyboardIdentifier="AddEditStudentViewController" id="Ujx-Tk-O8z" customClass="AddEditStudentViewController" customModule="StudentContact" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYr-ju-ioo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2P-BN-5vv">
-                                <rect key="frame" x="0.0" y="94" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kui-fP-KiI">
                                         <rect key="frame" x="132" y="30" width="150" height="150"/>
@@ -322,10 +328,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIM-9l-vBc">
-                                <rect key="frame" x="0.0" y="294" width="414" height="602"/>
+                                <rect key="frame" x="0.0" y="250" width="414" height="592"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CKa-Qe-Rhe">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddEditStudentTableViewCell" rowHeight="80" id="p0e-oa-nf1" customClass="AddEditStudentTableViewCell" customModule="StudentContact" customModuleProvider="target">
@@ -416,6 +422,7 @@
                         </connections>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QCg-s9-TKM"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myNavigationBar" destination="Xe1-aL-Owi" id="Mqc-cm-tU2"/>
@@ -430,9 +437,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1344.9275362318842" y="30.803571428571427"/>
+            <point key="canvasLocation" x="1557" y="-295"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2bJ-qk-sdP"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="defaultProfile" width="50" height="50"/>
         <image name="icons8-call-50-2" width="50" height="50"/>

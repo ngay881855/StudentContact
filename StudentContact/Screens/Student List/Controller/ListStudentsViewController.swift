@@ -50,11 +50,11 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewControllerIdentifier.addEditStudentViewController {
             if let addEditViewController = segue.destination as? AddEditStudentViewController {
-                guard let student = sender as? Student else { return }
-                addEditViewController.student = student
+                addEditViewController.student = Student()
                 addEditViewController.delegate = self
             }
         } else if segue.identifier == ViewControllerIdentifier.studentDetailViewController {
@@ -171,16 +171,14 @@ class ListStudentsViewController: UITableViewController {
 
 extension ListStudentsViewController: StudentInformationDelegate {
     func updateData(student: Student, sender: Any?) {
-        if let previousIndexPath = previousIndexPath {
-            if sender is StudentDetailViewController {
-                studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.remove(at: previousIndexPath.row)
-                if studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.count == 0 {
-                    studentDataSource.section.remove(at: previousIndexPath.section)
-                }
+        if sender is StudentDetailViewController, let previousIndexPath = previousIndexPath {
+            studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.remove(at: previousIndexPath.row)
+            if studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.count == 0 {
+                studentDataSource.section.remove(at: previousIndexPath.section)
             }
-            addStudent(at: nil, student: student)
-            
-            self.tableView.reloadData()
         }
+        addStudent(at: nil, student: student)
+        
+        self.tableView.reloadData()
     }
 }
