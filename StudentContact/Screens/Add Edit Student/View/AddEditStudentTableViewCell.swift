@@ -39,6 +39,7 @@ class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
         previousText = textField.text
     }
     
+    #warning("Doesn't support iOS 12.0, have to rework on this")
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if let text = textField.text, text.count > 0 {
             switch self.keyType {
