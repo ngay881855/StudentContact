@@ -8,7 +8,7 @@
 import UIKit
 
 class StudentDetailsTableViewCell: UITableViewCell {
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     

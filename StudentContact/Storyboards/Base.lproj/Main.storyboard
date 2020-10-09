@@ -28,13 +28,13 @@
         <!--List Students View Controller-->
         <scene sceneID="nyS-4X-ypz">
             <objects>
-                <tableViewController id="yKL-YS-Snt" customClass="ListStudentsViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yKL-YS-Snt" customClass="ListStudentsViewController" customModule="StudentContact" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hzx-Fm-bt3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="128" id="iwn-R6-vPQ" customClass="ListStudentTableViewCell" customModule="TableViewDemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="128" id="iwn-R6-vPQ" customClass="ListStudentTableViewCell" customModule="StudentContact" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iwn-R6-vPQ" id="5ub-0f-o7N">
@@ -105,7 +105,7 @@
         <!--Student Detail View Controller-->
         <scene sceneID="cGg-0h-lAD">
             <objects>
-                <viewController storyboardIdentifier="studentDetails" id="nYy-hn-l75" customClass="StudentDetailViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentDetailViewController" id="nYy-hn-l75" customClass="StudentDetailViewController" customModule="StudentContact" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JaY-aA-A3T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW5-BG-6JE">
-                                                <rect key="frame" x="24" y="0.0" width="56.666666666666657" height="57"/>
+                                                <rect key="frame" x="23.999999999999996" y="0.0" width="56.666666666666657" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="NW5-BG-6JE" secondAttribute="height" multiplier="1:1" id="Kgy-ax-dET"/>
                                                 </constraints>
@@ -153,7 +153,7 @@
                                         <rect key="frame" x="104.66666666666666" y="0.0" width="104.66666666666666" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmI-8n-oGu">
-                                                <rect key="frame" x="24" y="0.0" width="56.666666666666657" height="57"/>
+                                                <rect key="frame" x="23.999999999999996" y="0.0" width="56.666666666666657" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QmI-8n-oGu" secondAttribute="height" multiplier="1:1" id="Ku7-y1-5LH"/>
                                                 </constraints>
@@ -171,10 +171,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gvH-Kf-XWD">
-                                        <rect key="frame" x="209.33333333333326" y="0.0" width="104.66666666666666" height="80"/>
+                                        <rect key="frame" x="209.33333333333329" y="0.0" width="104.66666666666666" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7i-rQ-9hs">
-                                                <rect key="frame" x="24" y="0.0" width="56.666666666666657" height="57"/>
+                                                <rect key="frame" x="23.999999999999996" y="0.0" width="56.666666666666657" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="e7i-rQ-9hs" secondAttribute="height" multiplier="1:1" id="eLH-Jj-7Ny"/>
                                                 </constraints>
@@ -203,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="407"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentDetailsTableViewCell" rowHeight="70" id="VOr-nk-uu2" customClass="StudentDetailsTableViewCell" customModule="TableViewDemo" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentDetailsTableViewCell" rowHeight="70" id="VOr-nk-uu2" customClass="StudentDetailsTableViewCell" customModule="StudentContact" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VOr-nk-uu2" id="7z7-PA-5uE">
@@ -292,7 +292,7 @@
         <!--Add Edit Student View Controller-->
         <scene sceneID="yZh-vC-Cvu">
             <objects>
-                <viewController storyboardIdentifier="addEditStudent" id="Ujx-Tk-O8z" customClass="AddEditStudentViewController" customModule="TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditStudentViewController" id="Ujx-Tk-O8z" customClass="AddEditStudentViewController" customModule="StudentContact" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kYr-ju-ioo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,7 +328,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddEditStudentTableViewCell" rowHeight="80" id="p0e-oa-nf1" customClass="AddEditStudentTableViewCell" customModule="TableViewDemo" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddEditStudentTableViewCell" rowHeight="80" id="p0e-oa-nf1" customClass="AddEditStudentTableViewCell" customModule="StudentContact" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p0e-oa-nf1" id="N3t-az-1IW">

@@ -102,6 +102,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FF2E36E32530A8A80094A6A5 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				FFBFFB5525242AB6004E4E60 /* Constants.swift */,
+			);
+			path = Ultilities;
+			sourceTree = "<group>";
+		};
 		FF31FAA825145A9200BCCE72 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +129,7 @@
 		FF31FAB325145A9200BCCE72 /* StudentContact */ = {
 			isa = PBXGroup;
 			children = (
+				FF2E36E32530A8A80094A6A5 /* Ultilities */,
 				FFBFFB5225242A0A004E4E60 /* Storyboards */,
 				FFBFFB51252429FE004E4E60 /* Support Files */,
 				FF3991302517439E00725ABF /* Validation */,
@@ -211,7 +220,6 @@
 				FF31FAB425145A9200BCCE72 /* AppDelegate.swift */,
 				FF31FAB625145A9200BCCE72 /* SceneDelegate.swift */,
 				FF31FAC225145A9900BCCE72 /* Info.plist */,
-				FFBFFB5525242AB6004E4E60 /* Constants.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 				FF31FAAD25145A9200BCCE72 /* Sources */,
 				FF31FAAE25145A9200BCCE72 /* Frameworks */,
 				FF31FAAF25145A9200BCCE72 /* Resources */,
+				FFA0D2052530AC7700BA1939 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -289,6 +298,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFA0D2052530AC7700BA1939 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF31FAAD25145A9200BCCE72 /* Sources */ = {
@@ -457,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFM24X5V87;
 				INFOPLIST_FILE = "StudentContact/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FFM24X5V87;
 				INFOPLIST_FILE = "StudentContact/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AddEditStudentTextUpdate {
+protocol AddEditStudentTextUpdate: class {
     func updateTextFieldValue(value: String, keyType: StudentInfoKey)
 }
 
@@ -18,7 +18,7 @@ class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     // MARK: - Properties
     var keyType: StudentInfoKey = StudentInfoKey.firstName
-    var textFieldDelegate: AddEditStudentTextUpdate?
+    weak var textFieldDelegate: AddEditStudentTextUpdate?
     private var previousText: String?
     
     override func awakeFromNib() {
@@ -43,7 +43,7 @@ class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
         if let text = textField.text, text.count > 0 {
             switch self.keyType {
             case StudentInfoKey.firstName, StudentInfoKey.lastName:
-                if text.count > Constant.maxNameLength || !text.isAlphanumeric{
+                if text.count > Constant.maxNameLength || !text.isAlphanumeric {
                     valueTextField.text = previousText
                 } else {
                     previousText = text

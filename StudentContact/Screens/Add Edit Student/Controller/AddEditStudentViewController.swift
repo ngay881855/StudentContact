@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol StudentInformationDelegate {
+protocol StudentInformationDelegate: class {
     func updateData(student: Student, sender: Any?)
 }
 
@@ -20,7 +20,7 @@ class AddEditStudentViewController: UIViewController {
     // MARK: - Properties
     var student: Student = Student()
     var studentInfos: [StudentInfo] = []
-    var studentDelegate: StudentInformationDelegate?
+    weak var delegate: StudentInformationDelegate?
     
     // MARK: - View Life Cycles
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class AddEditStudentViewController: UIViewController {
         self.title = "Student Details"
         studentTableView.tableFooterView = UIView()
         // if the delegate of this VC is StudentDetailVC, then the title is Edit, otherwise, the title is Add
-        self.myNavigationBar.topItem?.title = self.studentDelegate is StudentDetailViewController ? "Edit Student" : "Add Student"
+        self.myNavigationBar.topItem?.title = self.delegate is StudentDetailViewController ? Constant.editStudentTitle : Constant.addStudentTitle
         
         profileButton.layer.masksToBounds = true
         profileButton.layer.cornerRadius = profileButton.bounds.width/2
@@ -102,7 +102,7 @@ class AddEditStudentViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         } else {
             self.student = studentTemp
-            self.studentDelegate?.updateData(student: self.student, sender: nil)
+            self.delegate?.updateData(student: self.student, sender: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -110,12 +110,12 @@ class AddEditStudentViewController: UIViewController {
     @IBAction func profileButton(_ sender: Any) {
         let actionSheet: UIAlertController = UIAlertController(title: "Please select where you want to choose photo from", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
-        let actionCamera = UIAlertAction(title: "Camera", style: .default) { [self] (action) in
-            showImagePicker(sourceType: .camera)
+        let actionCamera = UIAlertAction(title: "Camera", style: .default) { _ in
+            self.showImagePicker(sourceType: .camera)
         }
         actionCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
-        let actionPhotoLibrary = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+        let actionPhotoLibrary = UIAlertAction(title: "Photo Library", style: .default) { _ in
             self.showImagePicker(sourceType: .photoLibrary)
         }
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -164,7 +164,7 @@ extension AddEditStudentViewController: UITableViewDataSource {
 }
 
 extension AddEditStudentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image = info[.editedImage] as? UIImage else {
             return
         }

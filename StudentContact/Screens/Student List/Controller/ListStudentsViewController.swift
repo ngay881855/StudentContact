@@ -14,8 +14,8 @@ class GradientView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        let gradientLayer = layer as! CAGradientLayer
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.green.cgColor]
+        let gradientLayer = layer as? CAGradientLayer
+        gradientLayer?.colors = [UIColor.white.cgColor, UIColor.green.cgColor]
     }
 }
 
@@ -50,18 +50,39 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ViewControllerIdentifier.addEditStudentViewController {
+            if let addEditViewController = segue.destination as? AddEditStudentViewController {
+                guard let student = sender as? Student else { return }
+                addEditViewController.student = student
+                addEditViewController.delegate = self
+            }
+        } else if segue.identifier == ViewControllerIdentifier.studentDetailViewController {
+            if let studentDetailViewController = segue.destination as? StudentDetailViewController {
+                guard let student = sender as? Student else { return }
+                studentDetailViewController.student = student
+                studentDetailViewController.studentDelegate = self
+            }
+        }
+    }
+    
     // MARK: Delegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         studentDataSource.section.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let SB = UIStoryboard(name: "Main", bundle: nil)
-        let studentDetailVC = SB.instantiateViewController(identifier: "studentDetails") as StudentDetailViewController
         let sectionName = studentDataSource.section[indexPath.section]
-        studentDetailVC.student = studentDataSource.dataSource[sectionName]?[indexPath.row] ?? Student()
-        studentDetailVC.studentDelegate = self
-        self.navigationController?.pushViewController(studentDetailVC, animated: true)
+        let student = studentDataSource.dataSource[sectionName]?[indexPath.row] ?? Student()
+        if #available(iOS 13.0, *) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let studentDetailVC = storyboard.instantiateViewController(identifier: ViewControllerIdentifier.studentDetailViewController) as StudentDetailViewController
+            studentDetailVC.student = student
+            studentDetailVC.studentDelegate = self
+            self.navigationController?.pushViewController(studentDetailVC, animated: true)
+        } else {
+            self.performSegue(withIdentifier: ViewControllerIdentifier.studentDetailViewController, sender: student)
+        }
         previousIndexPath = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -95,11 +116,15 @@ class ListStudentsViewController: UITableViewController {
     
     // MARK: - UISetup/ Helpers/ Actions
     @IBAction func addStudent(_ sender: Any) {
-        let SB = UIStoryboard(name: "Main", bundle: nil)
-        let addStudentVC = SB.instantiateViewController(identifier: "addEditStudent") as AddEditStudentViewController
-        addStudentVC.studentDelegate = self //ListStudentViewController
-        addStudentVC.student = Student()
-        self.present(addStudentVC, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if #available(iOS 13.0, *) {
+            let addStudentVC = storyboard.instantiateViewController(identifier: ViewControllerIdentifier.addEditStudentViewController) as AddEditStudentViewController
+            addStudentVC.delegate = self
+            addStudentVC.student = Student()
+            self.present(addStudentVC, animated: true, completion: nil)
+        } else {
+            self.performSegue(withIdentifier: ViewControllerIdentifier.addEditStudentViewController, sender: Student())
+        }
     }
     
     private func loadDefaultData() {
@@ -132,7 +157,7 @@ class ListStudentsViewController: UITableViewController {
     
     private func showAlertEmptyStudentList() {
         let alertController = UIAlertController(title: "No student in your list", message: "Would you like to add a new student?", preferredStyle: .alert)
-        let addAction = UIAlertAction(title: "Add", style: .default) { (action) in
+        let addAction = UIAlertAction(title: "Add", style: .default) { _ in
             self.addStudent(self)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

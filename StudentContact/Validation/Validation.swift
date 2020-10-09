@@ -8,7 +8,7 @@ import UIKit
 import Foundation
 
 extension String {
-    func validateName() ->Bool {
+    func validateName() -> Bool {
         // Length be 18 characters max and 3 characters minimum, you can always modify.
         let nameRegex = "^\\w{3,25}$"
         let trimmedString = self.trimmingCharacters(in: .whitespaces)
@@ -16,7 +16,6 @@ extension String {
         let isValidateName = validateName.evaluate(with: trimmedString)
         return isValidateName
     }
-    
     
     func validatePhoneNumber() -> Bool {
         let phoneNumberRegex = "^[0-9+#]{10,12}$"
@@ -28,7 +27,7 @@ extension String {
     func validateEmailId() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let trimmedString = self.trimmingCharacters(in: .whitespaces)
-        let validateEmail = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let validateEmail = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         let isValidateEmail = validateEmail.evaluate(with: trimmedString)
         return isValidateEmail
     }
@@ -36,7 +35,7 @@ extension String {
         //Minimum 8 characters at least 1 Alphabet and 1 Number:
         let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
         let trimmedString = self.trimmingCharacters(in: .whitespaces)
-        let validatePassword = NSPredicate(format:"SELF MATCHES %@", passRegEx)
+        let validatePassword = NSPredicate(format: "SELF MATCHES %@", passRegEx)
         let isValidatePass = validatePassword.evaluate(with: trimmedString)
         return isValidatePass
     }

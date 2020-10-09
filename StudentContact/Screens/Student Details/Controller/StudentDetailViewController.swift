@@ -17,7 +17,7 @@ class StudentDetailViewController: UIViewController {
     // MARK: - Properties
     var student: Student = Student()
     private var studentInfos: [StudentInfo] = []
-    var studentDelegate: StudentInformationDelegate?
+    weak var studentDelegate: StudentInformationDelegate?
     
     private struct StudentInfo {
         var key: String
@@ -37,9 +37,9 @@ class StudentDetailViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let editAddVC = segue.destination as? AddEditStudentViewController else { return }
-        editAddVC.student = self.student
-        editAddVC.title = "Edit Contact"
+        guard let addEditStudentViewController = segue.destination as? AddEditStudentViewController else { return }
+        addEditStudentViewController.student = self.student
+        addEditStudentViewController.delegate = self
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
@@ -69,17 +69,19 @@ class StudentDetailViewController: UIViewController {
         profileButton.setImage(student.profileImage, for: .normal)
         self.tableView.reloadData()
     }
-    
-    
+
     // MARK: - Actions
     @IBAction func editStudent(_ sender: Any) {
         //self.performSegue(withIdentifier: "addEditStudent", sender: self.student)
-        let SB = UIStoryboard(name: "Main", bundle: nil)
-        let studentDetailVC = SB.instantiateViewController(identifier: "addEditStudent") as AddEditStudentViewController
-        studentDetailVC.student = self.student
-        studentDetailVC.title = "Edit Contact"
-        studentDetailVC.studentDelegate = self
-        self.present(studentDetailVC, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let studentDetailVC = storyboard.instantiateViewController(identifier: ViewControllerIdentifier.addEditStudentViewController) as AddEditStudentViewController
+            studentDetailVC.student = self.student
+            studentDetailVC.delegate = self
+            self.present(studentDetailVC, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: ViewControllerIdentifier.addEditStudentViewController, sender: self.student)
+        }
     }
     
     @IBAction func messageAction(_ sender: Any) {
@@ -88,8 +90,7 @@ class StudentDetailViewController: UIViewController {
             messageController.recipients = ["\(student.phoneNumber)"]
             messageController.messageComposeDelegate = self
             self.present(messageController, animated: true, completion: nil)
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: "Can not send text message", message: "Please setup your iMessage before trying to send text message", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -99,7 +100,7 @@ class StudentDetailViewController: UIViewController {
     @IBAction func callAction(_ sender: Any) {
         if let phoneURL = NSURL(string: ("tel://" + student.phoneNumber)) {
             let alert = UIAlertController(title: ("Calling " + student.phoneNumber), message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { _ in
                 UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
             }))
             
@@ -121,8 +122,6 @@ class StudentDetailViewController: UIViewController {
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)
     }
-    
-    
 }
 
 // MARK: - Extensions

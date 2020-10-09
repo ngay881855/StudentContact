@@ -15,8 +15,8 @@ struct StudentDataSource {
     var dataSource: [String: [Student]] {
         didSet {
             for (key, _) in dataSource {
-                dataSource[key]?.sort(by: { (s1, s2) -> Bool in
-                    s1.firstName < s2.firstName
+                dataSource[key]?.sort(by: { (str1, str2) -> Bool in
+                    str1.firstName < str2.firstName
                 })
             }
         }
