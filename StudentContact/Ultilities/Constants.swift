@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Constant {
+enum Constants {
     static let maxNameLength: Int = 25
     static let maxPhoneNumberLength: Int = 12
     static let maxEmailLength: Int = 50

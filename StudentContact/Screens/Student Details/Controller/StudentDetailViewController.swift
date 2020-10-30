@@ -5,17 +5,17 @@
 //  Created by Ngay Vong on 9/20/20.
 //
 
-import UIKit
 import MessageUI
+import UIKit
 
 class StudentDetailViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var profileButton: UIButton!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Properties
-    var student: Student = Student()
+    var student = Student()
     private var studentInfos: [StudentInfo] = []
     weak var studentDelegate: StudentInformationDelegate?
     
@@ -50,7 +50,7 @@ class StudentDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         profileButton.layer.masksToBounds = true
-        profileButton.layer.cornerRadius = self.profileButton.bounds.height/2
+        profileButton.layer.cornerRadius = self.profileButton.bounds.height / 2
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = UIColor.gray.cgColor
         profileButton.isUserInteractionEnabled = false
@@ -71,7 +71,7 @@ class StudentDetailViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func editStudent(_ sender: Any) {
+    @IBAction private func editStudent(_ sender: Any) {
         //self.performSegue(withIdentifier: "addEditStudent", sender: self.student)
         if #available(iOS 13.0, *) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,7 +84,7 @@ class StudentDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func messageAction(_ sender: Any) {
+    @IBAction private func messageAction(_ sender: Any) {
         if MFMessageComposeViewController.canSendText() {
             let messageController = MFMessageComposeViewController()
             messageController.recipients = ["\(student.phoneNumber)"]
@@ -97,19 +97,19 @@ class StudentDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func callAction(_ sender: Any) {
+    @IBAction private func callAction(_ sender: Any) {
         if let phoneURL = NSURL(string: ("tel://" + student.phoneNumber)) {
             let alert = UIAlertController(title: ("Calling " + student.phoneNumber), message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: "Call", style: .default) { _ in
                 UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-            }))
+            })
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    @IBAction func emailAction(_ sender: Any) {
+    @IBAction private func emailAction(_ sender: Any) {
         guard MFMailComposeViewController.canSendMail() else { return }
         
         let composeVC = MFMailComposeViewController()
@@ -141,8 +141,7 @@ extension StudentDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StudentDetailsTableViewCell", for: indexPath) as? StudentDetailsTableViewCell else {
             fatalError("Can not create cell")
         }
-        cell.keyLabel.text = studentInfos[indexPath.row].key
-        cell.valueLabel.text = studentInfos[indexPath.row].value
+        cell.setupUI(key: studentInfos[indexPath.row].key, value: studentInfos[indexPath.row].value)
         return cell
     }
 }
@@ -162,10 +161,12 @@ extension StudentDetailViewController: MFMailComposeViewControllerDelegate {
             let alert = UIAlertController(title: "Sending email failed", message: error?.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
         case .sent:
             let alert = UIAlertController(title: "Successfully sent email", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
         default:
             print("Default")
         }
@@ -179,10 +180,12 @@ extension StudentDetailViewController: MFMessageComposeViewControllerDelegate {
             let alert = UIAlertController(title: "Sending message failed", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
         case .sent:
             let alert = UIAlertController(title: "Successfully sent message", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
         default:
             print("Default")
         }

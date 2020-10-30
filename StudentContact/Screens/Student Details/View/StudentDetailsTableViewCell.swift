@@ -9,8 +9,8 @@ import UIKit
 
 class StudentDetailsTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
-    @IBOutlet weak var keyLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet private weak var keyLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +22,10 @@ class StudentDetailsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func setupUI(key: String, value: String) {
+        self.keyLabel.text = key
+        self.valueLabel.text = value
     }
 }

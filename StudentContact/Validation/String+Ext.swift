@@ -4,8 +4,9 @@
 //
 //  Created by Ngay Vong on 9/20/20.
 //
-import UIKit
+
 import Foundation
+import UIKit
 
 extension String {
     func validateName() -> Bool {
@@ -41,7 +42,7 @@ extension String {
     }
     
     var isNumeric: Bool {
-        guard self.count > 0 else { return false }
+        guard !self.isEmpty else { return false }
         let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         return Set(self).isSubset(of: nums)
     }

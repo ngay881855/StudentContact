@@ -21,7 +21,7 @@
 		FF39912225171F1300725ABF /* StudentDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912125171F1300725ABF /* StudentDetailsTableViewCell.swift */; };
 		FF39912A25172DB900725ABF /* AddEditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912925172DB900725ABF /* AddEditStudentViewController.swift */; };
 		FF39912E2517359200725ABF /* AddEditStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */; };
-		FF399132251743B100725ABF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF399131251743B100725ABF /* Validation.swift */; };
+		FF399132251743B100725ABF /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF399131251743B100725ABF /* String+Ext.swift */; };
 		FFBFFB5625242AB6004E4E60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBFFB5525242AB6004E4E60 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		FF39912125171F1300725ABF /* StudentDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		FF39912925172DB900725ABF /* AddEditStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentViewController.swift; sourceTree = "<group>"; };
 		FF39912D2517359200725ABF /* AddEditStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditStudentTableViewCell.swift; sourceTree = "<group>"; };
-		FF399131251743B100725ABF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FF399131251743B100725ABF /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FFBFFB5525242AB6004E4E60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +102,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		FF2D4839254C637300129E66 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		FF2E36E32530A8A80094A6A5 /* Ultilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +136,7 @@
 		FF31FAB325145A9200BCCE72 /* StudentContact */ = {
 			isa = PBXGroup;
 			children = (
+				FF2D4839254C637300129E66 /* New Group */,
 				FF2E36E32530A8A80094A6A5 /* Ultilities */,
 				FFBFFB5225242A0A004E4E60 /* Storyboards */,
 				FFBFFB51252429FE004E4E60 /* Support Files */,
@@ -209,7 +217,7 @@
 		FF3991302517439E00725ABF /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				FF399131251743B100725ABF /* Validation.swift */,
+				FF399131251743B100725ABF /* String+Ext.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -336,7 +344,7 @@
 				FF31FAB725145A9200BCCE72 /* SceneDelegate.swift in Sources */,
 				FF2D2FBB25155B9A00708615 /* Student.swift in Sources */,
 				FF31FAD525146CB300BCCE72 /* ListStudentTableViewCell.swift in Sources */,
-				FF399132251743B100725ABF /* Validation.swift in Sources */,
+				FF399132251743B100725ABF /* String+Ext.swift in Sources */,
 				FF31FACB25145B4A00BCCE72 /* ListStudentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

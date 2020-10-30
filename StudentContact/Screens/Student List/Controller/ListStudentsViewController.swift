@@ -8,7 +8,7 @@
 import UIKit
 
 class GradientView: UIView {
-    override open class var layerClass: AnyClass {
+    override class var layerClass: AnyClass {
         return CAGradientLayer.classForCoder()
     }
     
@@ -24,7 +24,7 @@ class ListStudentsViewController: UITableViewController {
     // MARK: Properties
     private var studentDataSource = StudentDataSource(section: [], dataSource: [:]) {
         didSet {
-            if studentDataSource.section.count == 0 {
+            if studentDataSource.section.isEmpty {
                 showAlertEmptyStudentList()
             }
         }
@@ -44,8 +44,9 @@ class ListStudentsViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         // if there is no student in the list, ask the user to add one
-        if studentDataSource.section.count == 0 {
+        if studentDataSource.section.isEmpty {
             showAlertEmptyStudentList()
         }
     }
@@ -105,17 +106,15 @@ class ListStudentsViewController: UITableViewController {
             return UITableViewCell()
         }
         let sectionName = studentDataSource.section[indexPath.section]
-        if let contact = studentDataSource.dataSource[sectionName]?[indexPath.row] {
-            cell.nameLabel.text = contact.firstName + " " + contact.lastName
-            cell.contactImageView.image = contact.profileImage
-            cell.favorButton.setImage(contact.isFavorite ? #imageLiteral(resourceName: "favorite") : #imageLiteral(resourceName: "unfavorite"), for: .normal)
+        if let student = studentDataSource.dataSource[sectionName]?[indexPath.row] {
+            cell.setupUI(studentInfo: student)
         }
         
         return cell
     }
     
     // MARK: - UISetup/ Helpers/ Actions
-    @IBAction func addStudent(_ sender: Any) {
+    @IBAction private func addStudent(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if #available(iOS 13.0, *) {
             let addStudentVC = storyboard.instantiateViewController(identifier: ViewControllerIdentifier.addEditStudentViewController) as AddEditStudentViewController
@@ -127,6 +126,7 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
+    // swiftlint:disable discouraged_object_literal
     private func loadDefaultData() {
         var student = Student(profileImage: #imageLiteral(resourceName: "p4"), firstName: "David", lastName: "Wang", phoneNumber: "6788881155", email: "davewang123@gmail.com", isFavorite: false)
         addStudent(at: nil, student: student)
@@ -173,7 +173,7 @@ extension ListStudentsViewController: StudentInformationDelegate {
     func updateData(student: Student, sender: Any?) {
         if sender is StudentDetailViewController, let previousIndexPath = previousIndexPath {
             studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.remove(at: previousIndexPath.row)
-            if studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]]?.count == 0 {
+            if let section = studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]], section.isEmpty {
                 studentDataSource.section.remove(at: previousIndexPath.section)
             }
         }

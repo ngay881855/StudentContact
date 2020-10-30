@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol StudentInformationDelegate: class {
+protocol StudentInformationDelegate: AnyObject {
     func updateData(student: Student, sender: Any?)
 }
 
 class AddEditStudentViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var studentTableView: UITableView!
-    @IBOutlet weak var myNavigationBar: UINavigationBar!
+    @IBOutlet private weak var profileButton: UIButton!
+    @IBOutlet private weak var studentTableView: UITableView!
+    @IBOutlet private weak var myNavigationBar: UINavigationBar!
     
     // MARK: - Properties
-    var student: Student = Student()
+    var student = Student()
     var studentInfos: [StudentInfo] = []
     weak var delegate: StudentInformationDelegate?
     
@@ -36,10 +36,10 @@ class AddEditStudentViewController: UIViewController {
         self.title = "Student Details"
         studentTableView.tableFooterView = UIView()
         // if the delegate of this VC is StudentDetailVC, then the title is Edit, otherwise, the title is Add
-        self.myNavigationBar.topItem?.title = self.delegate is StudentDetailViewController ? Constant.editStudentTitle : Constant.addStudentTitle
+        self.myNavigationBar.topItem?.title = self.delegate is StudentDetailViewController ? Constants.editStudentTitle : Constants.addStudentTitle
         
         profileButton.layer.masksToBounds = true
-        profileButton.layer.cornerRadius = profileButton.bounds.width/2
+        profileButton.layer.cornerRadius = profileButton.bounds.width / 2
         profileButton.layer.borderWidth = 1
         profileButton.layer.borderColor = UIColor.gray.cgColor
     }
@@ -67,18 +67,22 @@ class AddEditStudentViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func tapGestureActivated(_ sender: Any) {
+    @IBAction private func tapGestureActivated(_ sender: Any) {
         view.endEditing(true)
     }
     
-    @IBAction func cancelBarButton(_ sender: Any) {
+    @IBAction private func cancelBarButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveBarButton(_ sender: Any) {
+    @IBAction private func saveBarButton(_ sender: Any) {
         var studentTemp = student
         
-        studentTemp.profileImage = profileButton.currentImage ?? #imageLiteral(resourceName: "defaultProfile")
+        if let currentImage = profileButton.currentImage {
+            studentTemp.profileImage = currentImage
+        } else {
+            studentTemp.profileImage = UIImage(imageLiteralResourceName: "defaultImage")
+        }
         
         var message = String()
         var title = String()
@@ -96,7 +100,7 @@ class AddEditStudentViewController: UIViewController {
             message = "Please make sure email is in correct format (ex: david@gmail.com), and the length must not greater than 50 characters"
         }
         if !title.isEmpty && !message.isEmpty {
-            let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let actionOK = UIAlertAction(title: "OK", style: .cancel, handler: nil      )
             alert.addAction(actionOK)
             self.present(alert, animated: true, completion: nil)
@@ -107,8 +111,8 @@ class AddEditStudentViewController: UIViewController {
         }
     }
     
-    @IBAction func profileButton(_ sender: Any) {
-        let actionSheet: UIAlertController = UIAlertController(title: "Please select where you want to choose photo from", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+    @IBAction private func profileButton(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Please select where you want to choose photo from", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
         let actionCamera = UIAlertAction(title: "Camera", style: .default) { _ in
             self.showImagePicker(sourceType: .camera)
@@ -146,19 +150,9 @@ extension AddEditStudentViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddEditStudentTableViewCell", for: indexPath) as? AddEditStudentTableViewCell else {
             fatalError("Can not create cell")
         }
-        cell.keyLabel.text = studentInfos[indexPath.row].key
-        cell.valueTextField.text = studentInfos[indexPath.row].value
-        cell.keyType = studentInfos[indexPath.row].keyType
+
         cell.textFieldDelegate = self
-        switch studentInfos[indexPath.row].keyType {
-        case StudentInfoKey.firstName, StudentInfoKey.lastName:
-            cell.valueTextField.keyboardType = .default
-            cell.valueTextField.autocapitalizationType = .words
-        case StudentInfoKey.phone:
-            cell.valueTextField.keyboardType = .phonePad
-        case StudentInfoKey.email:
-            cell.valueTextField.keyboardType = .emailAddress
-        }
+        cell.setupUI(studentInfo: studentInfos[indexPath.row])
         return cell
     }
 }
@@ -182,10 +176,13 @@ extension AddEditStudentViewController: AddEditStudentTextUpdate {
         switch keyType {
         case .firstName:
             student.firstName = value
+            
         case .lastName:
             student.lastName = value
+            
         case .phone:
             student.phoneNumber = value
+            
         case .email:
             student.email = value
         }

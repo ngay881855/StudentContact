@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol AddEditStudentTextUpdate: class {
+protocol AddEditStudentTextUpdate: AnyObject {
     func updateTextFieldValue(value: String, keyType: StudentInfoKey)
 }
 
 class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
     // MARK: - IBOutlets
-    @IBOutlet weak var keyLabel: UILabel!
-    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet private weak var keyLabel: UILabel!
+    @IBOutlet private weak var valueTextField: UITextField!
     
     // MARK: - Properties
-    var keyType: StudentInfoKey = StudentInfoKey.firstName
+    var keyType = StudentInfoKey.firstName
     weak var textFieldDelegate: AddEditStudentTextUpdate?
     private var previousText: String?
     
@@ -41,22 +41,24 @@ class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     #warning("Doesn't support iOS 12.0, have to rework on this")
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if let text = textField.text, text.count > 0 {
+        if let text = textField.text, !text.isEmpty {
             switch self.keyType {
             case StudentInfoKey.firstName, StudentInfoKey.lastName:
-                if text.count > Constant.maxNameLength || !text.isAlphanumeric {
+                if text.count > Constants.maxNameLength || !text.isAlphanumeric {
                     valueTextField.text = previousText
                 } else {
                     previousText = text
                 }
+                
             case StudentInfoKey.phone:
-                if text.count > Constant.maxPhoneNumberLength || !text.isPhoneNumberCharacter {
+                if text.count > Constants.maxPhoneNumberLength || !text.isPhoneNumberCharacter {
                     valueTextField.text = previousText
                 } else {
                     previousText = text
                 }
+                
             case StudentInfoKey.email:
-                if text.count > Constant.maxEmailLength {
+                if text.count > Constants.maxEmailLength {
                     valueTextField.text = previousText
                 } else {
                     previousText = text
@@ -72,5 +74,23 @@ class AddEditStudentTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func setupUI(studentInfo: StudentInfo) {
+        self.keyLabel.text = studentInfo.key
+        self.valueTextField.text = studentInfo.value
+        self.keyType = studentInfo.keyType
+        
+        switch self.keyType {
+        case StudentInfoKey.firstName, StudentInfoKey.lastName:
+            self.valueTextField.keyboardType = .default
+            self.valueTextField.autocapitalizationType = .words
+            
+        case StudentInfoKey.phone:
+            self.valueTextField.keyboardType = .phonePad
+            
+        case StudentInfoKey.email:
+            self.valueTextField.keyboardType = .emailAddress
+        }
     }
 }

@@ -4,8 +4,9 @@
 //
 //  Created by Ngay Vong on 9/18/20.
 //
-import UIKit
+
 import Foundation
+import UIKit
 
 struct Student {
     var profileImage: UIImage
@@ -16,7 +17,7 @@ struct Student {
     var isFavorite: Bool
     
     init() {
-        profileImage = #imageLiteral(resourceName: "defaultProfile")
+        profileImage = UIImage(imageLiteralResourceName: "defaultProfile")
         firstName = ""
         lastName = ""
         phoneNumber = ""
