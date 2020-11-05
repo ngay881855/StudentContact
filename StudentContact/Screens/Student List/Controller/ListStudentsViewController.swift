@@ -40,7 +40,7 @@ class ListStudentsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         self.title = "Students"
         
-        loadDefaultData()
+        self.loadDataFromDataSource()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,7 +114,7 @@ class ListStudentsViewController: UITableViewController {
     }
     
     // MARK: - UISetup/ Helpers/ Actions
-    @IBAction private func addStudent(_ sender: Any) {
+    @IBAction private func addStudentButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if #available(iOS 13.0, *) {
             let addStudentVC = storyboard.instantiateViewController(identifier: ViewControllerIdentifier.addEditStudentViewController) as AddEditStudentViewController
@@ -138,6 +138,14 @@ class ListStudentsViewController: UITableViewController {
         addStudent(at: nil, student: student)
     }
     
+    private func loadDataFromDataSource() {
+        let studentDataAccess = StudentDataAccess()
+        let students = studentDataAccess.getAllStudents()
+        for student in students {
+            self.addStudent(at: nil, student: student)
+        }
+    }
+    
     private func addStudent(at index: Int?, student: Student) {
         var char = String(student.firstName.first ?? Character(""))
         if char.isNumeric {
@@ -153,12 +161,19 @@ class ListStudentsViewController: UITableViewController {
                 studentDataSource.dataSource[char]?.append(student)
             }
         }
+        
+        do {
+            let studentDataAccess = StudentDataAccess()
+            try studentDataAccess.insert(student: student)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     private func showAlertEmptyStudentList() {
         let alertController = UIAlertController(title: "No student in your list", message: "Would you like to add a new student?", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Add", style: .default) { _ in
-            self.addStudent(self)
+            self.addStudentButtonTapped(self)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(addAction)

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct Student {
+    var identity: Int
     var profileImage: UIImage
     var firstName: String
     var lastName: String
@@ -17,6 +18,7 @@ struct Student {
     var isFavorite: Bool
     
     init() {
+        identity = -1
         profileImage = UIImage(imageLiteralResourceName: "defaultProfile")
         firstName = ""
         lastName = ""
@@ -25,7 +27,8 @@ struct Student {
         isFavorite = false
     }
     
-    init(profileImage: UIImage, firstName: String, lastName: String, phoneNumber: String, email: String, isFavorite: Bool) {
+    init(profileImage: UIImage, firstName: String, lastName: String, phoneNumber: String, email: String, isFavorite: Bool, identity: Int = -1) {
+        self.identity = identity
         self.profileImage = profileImage
         self.firstName = firstName
         self.lastName = lastName
