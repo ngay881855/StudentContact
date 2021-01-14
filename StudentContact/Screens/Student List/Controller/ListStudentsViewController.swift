@@ -146,6 +146,15 @@ class ListStudentsViewController: UITableViewController {
         }
     }
     
+    private func addStudentToDB(student: Student) {
+        do {
+            let studentDataAccess = StudentDataAccess()
+            try studentDataAccess.insert(student: student)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     private func addStudent(at index: Int?, student: Student) {
         var char = String(student.firstName.first ?? Character(""))
         if char.isNumeric {
@@ -160,13 +169,6 @@ class ListStudentsViewController: UITableViewController {
             } else {
                 studentDataSource.dataSource[char]?.append(student)
             }
-        }
-        
-        do {
-            let studentDataAccess = StudentDataAccess()
-            try studentDataAccess.insert(student: student)
-        } catch {
-            print(error.localizedDescription)
         }
     }
     
@@ -191,6 +193,8 @@ extension ListStudentsViewController: StudentInformationDelegate {
             if let section = studentDataSource.dataSource[studentDataSource.section[previousIndexPath.section]], section.isEmpty {
                 studentDataSource.section.remove(at: previousIndexPath.section)
             }
+        } else {
+            addStudentToDB(student: student)
         }
         addStudent(at: nil, student: student)
         

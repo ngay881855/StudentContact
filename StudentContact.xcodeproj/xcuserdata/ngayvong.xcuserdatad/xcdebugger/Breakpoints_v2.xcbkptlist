@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1FB9AC84-895D-4156-A446-D9CAA17D714E"
-            shouldBeEnabled = "Yes"
+            uuid = "0A6C9E53-7032-4151-B021-02D8678A6CAA"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StudentContact/Screens/Student List/Controller/ListStudentsViewController.swift"
+            filePath = "StudentContact/Database Layer/StudentDataAccess.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "insert(student:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
