@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.window?.makeKeyAndVisible()
         }
+        
         return true
     }
 
