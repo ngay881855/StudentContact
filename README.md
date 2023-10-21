@@ -26,6 +26,6 @@ brew install swiftlint
 ## Images
 
 <p align="center">
-  <img src="https://github.com/ngay881855/UITableViewDemo/blob/master/GIFs/ezgif-StudentList_1.gif" height="600" />
+  <img src="https://github.com/ngay881855/UITableViewDemo/blob/master/GIFs/ezgif-StudentList_1.gif" width="300" />
 </p>
 
